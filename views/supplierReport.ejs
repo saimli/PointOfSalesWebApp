@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <%- include('_adminheader.ejs') %>
+
+  <head>
+    <title>Inventory</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+
+    <form action='/reportOrders' method='post'>
+        <button class="btn" type="submit">Date Parameters</button>
+        <label for="uname"><b>From:</b></label>
+          <input type="text" placeholder="YYYY-MM-DD" name="dateFrom" required>
+        <label for="uname"><b>To:</b></label>
+          <input type="text" placeholder="YYYY-MM-DD" name="dateTo" required>
+
+        <input type="hidden" name="isAdmin" value="<%=isAdmin%>">
+    </form>
+
+
+
+  </body>
+</html>

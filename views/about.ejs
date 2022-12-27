@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <%if(isAdmin == null) {%>
+            <%- include('./_header') %>
+        <%}
+        if(isAdmin == 1) {%>
+            <%- include('./_adminheader') %>
+        <%}
+        if(isAdmin == 0) {%>
+            <%- include('./_userheader') %>
+        <%}%>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-2">
+                    <h1>About </h1>
+
+                    <p> During the Fall 2022 semester, a group of students decided to take a database course where they learned techniques for file organizations on secondary storage, performance, design, and management of large integrated databases, data models, and query languages. During their time in class, they were assigned to do a project. This website is what flourished from such an event. 
+ Who would have thought that it would flourish this much?
+                    Thank you for being part of this journey!! </p>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

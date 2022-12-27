@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <%- include('_adminheader.ejs') %>
+
+  <head>
+    <title>Inventory</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+
+    <form action='/supsoldReport' method='post'>
+        <button class="btn" type="submit">Department ID</button>
+        <label for="uname"><b>Department ID:</b></label>
+          <input type="text" placeholder="XXXX" name="supid" required>
+
+        <input type="hidden" name="isAdmin" value="<%=isAdmin%>">
+    </form>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/productCatalog.css">
+    <title>Products</title>
+</head>
+
+<body>
+    <%if(isAdmin == null) {%>
+        <%- include('./_header') %>
+    <%}
+    if(isAdmin == 1) {%>
+        <%- include('./_adminheader') %>
+    <%}
+    if(isAdmin == 0) {%>
+        <%- include('./_userheader') %>
+    <%}%>
+
+
+        <%if(data.length) { %>
+            <%for(var i = 0; i< data.length; i++) {%>
+                <div class="card">
+                    <h3><%=data[i].productID%> Product ID</h3>
+                    <p class="price"><%=data[i].userID%> UserID</p>
+                    <p><%=data[i].numItems%> QT</p>
+                    <p><button><a href = "/shoppingcart">Remove from Cart</a></button></p>
+                      </div>
+                </div>
+            <%}%>
+        <%}%>
+</body>
+</html>

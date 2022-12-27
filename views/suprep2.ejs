@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <%- include('_adminheader.ejs') %>
+
+  <head>
+    <title>Inventory</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+
+    
+
+      <table class="table">
+        <thead>
+
+          <tr>
+            <th>~~</th>
+            <th></th>
+            <th>Order ID</th>
+            <th>Supplier</th>
+            <th>Date</th>
+            <th>Total units sold between <%=from%> and <%=to%>: <%=sum.sum%></th>
+         
+          </tr>
+
+
+        </thead>
+        <tbody>
+
+
+
+
+
+          <% if(data.length){ for(var i = 0; i< data.length; i++) {%>
+          <tr>
+            <th scope="row"><%= (i+1) %></th>
+            <td><%= data[i].username%></td>
+            <td><%= data[i].orderAmount%></td>
+            <td><%= data[i].orderID%></td>
+            <td><%= data[i].orderDate%></td>
+          </tr>
+          <tr>
+
+          <% } }else{ %>
+          <tr>
+            <td><%=data.length%></td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

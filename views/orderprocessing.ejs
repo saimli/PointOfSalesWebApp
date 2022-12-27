@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <%- include('./_adminheader.ejs') %>
+
+  <head>
+    <title>Inventory</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div class="container">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Order Id</th>
+            <th>Customer Id</th>
+            <th>User Id</th>
+            <th>Total Due</th>
+            <th>Order Date</th>
+            <th>Order Status</th>
+            <th>Order Update</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if(data.length){ for(var i = 0; i< data.length; i++){%>
+          <tr>
+            <th scope="row"><%= data[i].orderID %></th>
+            <td><%= data[i].customerID %></td>
+            <td><%= data[i].userID %></td>
+            <td><%= data[i].orderAmount%></td>
+            <td><%= data[i].orderDate%></td>
+            <%  var status;
+                switch (data[i].orderStatus)
+                {
+                    case 1: status="Received";
+                        break;
+                    case 2: status="Ready To Ship";
+                        break;
+                    case 3: status="Shipped";
+                        break;
+                    case 0: status="Cancelled";
+                        break;
+                }    %>   
+            <td class="badge badge-primary"><%=status%></td>
+            <td class="row">
+                <form action='/orderStatusUpdate' method='post'>
+                    <button class="btn" type="submit" > Received</button>
+                    <input type="hidden" name="orderID" value="<%=data[i].orderID%>">
+                    <input type="hidden" name="orderStatus" value=1>
+                </form>
+                <form action='/orderStatusUpdate' method='post'>
+                    <button class="btn" type="submit">Ready To Ship</button>
+                    <input type="hidden" name="orderID" value="<%=data[i].orderID%>">
+                    <input type="hidden" name="orderStatus" value=2>
+                </form>
+                <form action='/orderStatusUpdate' method='post'>
+                    <button class="btn" type="submit">Shipped</button>
+                    <input type="hidden" name="orderID" value="<%=data[i].orderID%>">
+                    <input type="hidden" name="orderStatus" value=3>
+                </form>
+                <form action='/orderStatusUpdate' method='post'>
+                    <button class="btn" type="submit">Cancelled</button>
+                    <input type="hidden" name="orderID" value="<%=data[i].orderID%>">
+                    <input type="hidden" name="orderStatus" value=0>
+                </form>
+            </td>
+
+          </tr>
+          <% } }else{ %>
+          <tr>
+            <td><%=data.length%></td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+      
+        </tbody>
+      </table>
+    </div>
+  </div>
+  </body>
+</html>
