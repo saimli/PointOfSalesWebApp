@@ -6,6 +6,7 @@ Saim Ali: saimali00@live.com
 
 Contributing members: 
 Robert Duque
+
 Natalie Severino
 Josh Meza
 Dzung Ho
