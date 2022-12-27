@@ -4,7 +4,7 @@ Website Link: https://group9poss.azurewebsites.net/
 
 For any questions/concerns please contact:
 
-Saim Ali, Email ( saimali00@live.com )
+Saim Ali, ( saimali00@live.com )
 
 
 Contributing members:
