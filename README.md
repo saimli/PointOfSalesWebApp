@@ -5,7 +5,6 @@ For any questions/concerns please contact:
 Saim Ali: saimali00@live.com
 
 Contributing members: 
-
 Robert Duque
 
 Natalie Severino
